@@ -27,7 +27,9 @@ class SocketIO
         {
             $this->origins($opts['origins']);
         }
-        isset($opts['count']) && is_numeric($opts['count']) && $this->count=$opts['count'];
+        if(isset($opts['count']) && is_numeric($opts['count'])){
+            $this->count=$opts['count'];unset($opts['count']);
+        }
         unset($opts['nsp'], $opts['socket'], $opts['adapter'], $opts['origins']);
 
         $this->sockets = $this->of('/');
