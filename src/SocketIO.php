@@ -12,7 +12,7 @@ class SocketIO
     public $engine = null;
     protected $_origins = '*:*';
     protected $_path = null;
-
+    protected $count=1;
     public function __construct($port = null, $opts = array())
     {
         $nsp = isset($opts['nsp']) ? $opts['nsp'] : '\PHPSocketIO\Nsp';
@@ -27,7 +27,7 @@ class SocketIO
         {
             $this->origins($opts['origins']);
         }
-
+        isset($opts['count']) && is_numeric($opts['count']) && $this->count=$opts['count'];
         unset($opts['nsp'], $opts['socket'], $opts['adapter'], $opts['origins']);
 
         $this->sockets = $this->of('/');
@@ -40,7 +40,7 @@ class SocketIO
         {
             $worker = new Worker('SocketIO://0.0.0.0:'.$port, $opts);
             $worker->name = 'PHPSocketIO';
-
+            $worker->count=$this->count;
             if(isset($opts['ssl'])) {
                 $worker->transport = 'ssl';
             }
