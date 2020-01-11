@@ -1,7 +1,7 @@
 {
-    "name"  : "workerman/phpsocket.io",
+    "name"  : "tdy/workerman/phpsocket.io",
     "type"  : "library",
-    "keywords": ["socket.io"],
+    "keywords": ["socket.io",'tdy'],
     "homepage": "http://www.workerman.net",
     "license" : "MIT",
     "require": {
