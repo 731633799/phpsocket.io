@@ -1,11 +1,11 @@
-#安装
+# 安装
 composer require tdy_workerman/phpsocket.io
 
 
-#新增支持启动多进程  
+# 新增支持启动多进程  
 $io = new SocketIO(2021,array("count"=>2));  //指定开启进程数
 
-#扩展客户端带参数时链接namespace
+# 扩展客户端带参数时链接namespace
 
 
 # phpsocket.io
