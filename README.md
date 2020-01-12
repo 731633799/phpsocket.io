@@ -1,3 +1,13 @@
+#安装
+composer require tdy_workerman/phpsocket.io
+
+
+#新增支持启动多进程  
+$io = new SocketIO(2021,array("count"=>2));  //指定开启进程数
+
+#扩展客户端带参数时链接namespace
+
+
 # phpsocket.io
 A server side alternative implementation of [socket.io](https://github.com/socketio/socket.io) in PHP based on [Workerman](https://github.com/walkor/Workerman).<br>
 
